@@ -17,7 +17,7 @@
                 </div>
         </div>
         <div class='footer'>
-            <a fref="/">戻る</a>
+            <a href="/">戻る</a>
         </div>
     </body>
 </html>
