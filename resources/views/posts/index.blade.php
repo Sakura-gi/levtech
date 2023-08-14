@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+  
+  <x-app-layout>
+    <x-slot name="header">
+  
     <head>
         <meta charset="utf-8">
         <title>Blog</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
+    
+    <h2>Index</h2>
+    
+  </x-slot>
+    
     <body>
         <h1>Blog Name</h1>
         <a href='/posts/create'>create</a>
@@ -21,6 +30,7 @@
                         @csrf
                         @method('DELETE')
                         <button type="button" onclick="deletePost({{ $post->id }})">delete </button>
+                    
                     </form> 
                 </div>
             @endforeach
@@ -38,4 +48,9 @@
             }
         </script>
     </body>
+    
+    <h2>ログインユーザー:{{ Auth::user()->name }}</h2>
+    
+  </x-app-layout>
+    
 </html>
